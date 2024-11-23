@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="family.css">
+    <title>Tharchen Passion</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Tharchen<span> Family</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="education.html">Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="family.html">Family</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="passion.html">Passion</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="passion.html">Passion</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Family is not an important thing. It's everything</h1>
+        <p>Welcome to our family page! Get to know a little about each of us below.</p>
+    </header>
+
+    <!-- Family Member Sections -->
+    <section class="family-member" id="father">
+        <h2>My Father</h2>
+        <img src="dad.jpg" alt="Dad Photo" class="profile-img">
+        <p>Sangay Dorji, a 45-year-old farmer from Sangbaykha in Haa, is dedicated to his work and community. Deeply connected to his land, he continues traditional farming practices to support his family and local economy. Sangay takes pride in preserving his culture and enjoys sharing his farming knowledge with the younger generation.</p>
+        <a href="picture1.html" class="see-more-btn">See more pictures</a>
+    </section>
+
+    <section class="family-member" id="mother">
+        <h2>My Mother</h2>
+        <img src="mom.jpg" alt="Mother's Photo" class="profile-img">
+        <p>Tshering Gyelmo, a 50-year-old farmer, resides in the serene village of Sangbaykha in Haa. Known for her dedication, she works tirelessly in the fields, nurturing her crops with care and commitment.</p>
+        <a href="Picture2.html" class="see-more-btn">See more pictures</a>
+    </section>
+
+    <section class="family-member" id="brother">
+        <h2>My Brother</h2>
+        <img src="bro.jpg" alt="Brother's Photo" class="profile-img">
+        <p>Kuenzang Jurmey is a 24-year-old entrepreneur living in Sangbaykha. He is currently running a small business, where he applies his creativity and hard work to succeed. Kuenzang is dedicated to providing quality products and services to his community, making a positive impact in his local area.</p>
+        <a href="Picture3.html" class="see-more-btn">See more pictures</a>
+    </section>
+
+    <section class="family-member" id="sister">
+        <h2>My Sister</h2>
+        <img src="sis.jpg" alt="Sister's Photo" class="profile-img">
+        <p>Kinley Choki is a 28-year-old housewife living in Sangbaykha, under Haa Dzongkhag. She dedicates her time to managing her household and caring for her family, creating a warm and loving environment.</p>
+        <a href="picture4.html" class="see-more-btn">See more pictures</a>
+    </section>
+
+   
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset: 0});
+      
+      function hamburg() {
+          document.querySelector('.dropdown').classList.toggle('active');
+      }
+
+      function cancel() {
+          document.querySelector('.dropdown').classList.remove('active');
+      }
+    </script>
+</body>
+</html>

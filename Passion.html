@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="passion.css">
+    <title>Tharchen Passion</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Tharchen<span> Passion</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="education.html">Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="family.html">Family</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="Passion.html">Passion</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="Passion.html">Passion</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section id="passions">
+        <!-- Football Section -->
+        <div class="passion-section">
+            <h2>Playing Football</h2>
+            <img src="pfootball.png" alt="Playing Football" class="passion-image">
+            <p>Football is not just a game to me; it's a passion. The thrill of being on the field, strategizing with my teammates, and giving my best is incomparable. Football brings out the competitive spirit in me and teaches valuable lessons of teamwork and resilience.</p>
+        </div>
+
+        <!-- Traditional Games Section -->
+        <div class="passion-section">
+            <h2>Playing Traditional Games</h2>
+            <img src="pgames.jpg" alt="Playing Traditional Games" class="passion-image">
+            <p>Traditional games hold a special place in my heart. These games are part of our culture, connecting us to our heritage. Whether it’s a friendly match or a festival gathering, traditional games bring a sense of community and joy that I always look forward to.</p>
+        </div>
+
+        <!-- Traveling Section -->
+        <div class="passion-section">
+            <h2>Traveling</h2>
+            <img src="ptraveling.webp" alt="Traveling" class="passion-image">
+            <p>Traveling is my way of exploring the world and learning about different cultures. Each place I visit offers unique experiences, memories, and inspiration. From scenic landscapes to bustling cities, traveling helps me expand my horizons and gain new perspectives.</p>
+        </div>
+    </section>
+
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset: 0});
+      
+      function hamburg() {
+          document.querySelector('.dropdown').classList.toggle('active');
+      }
+
+      function cancel() {
+          document.querySelector('.dropdown').classList.remove('active');
+      }
+    </script>
+    <script src="passion.js"></script>
+</body>
+</html>

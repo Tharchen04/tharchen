@@ -1,0 +1,313 @@
+/* Reset styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideInDown 1s ease;
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #008000; /* Green color for "level" */
+    text-shadow: 0px 0px 5px #008000;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2em;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0cd21fb6; /* Orange color on hover */
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Centered Container for Education Level */
+.container {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-top: 5em;
+    animation: zoomIn 1s ease;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #000000;
+    margin-bottom: 1em;
+}
+
+label {
+    font-weight: bold;
+    color: #03c751;
+}
+
+select {
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    border: 1px solid #0b0b0b;
+}
+
+#education-message {
+    margin-top: 1em;
+    color: #555;
+}
+
+/* Navigation container styling */
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.nav-container .links {
+    display: flex;
+    animation: fadeInLinks 1.5s ease;
+}
+
+@keyframes fadeInLinks {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s;
+}
+
+.nav-container .links a:hover {
+    color: #077b32;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Dropdown menu for mobile */
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: transform 0.3s ease;
+    display: none;
+}
+
+@media (max-width: 884px) {
+    .dropdown {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .dropdown .links a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 15px 0;
+        background-color: #000;
+    }
+
+    .dropdown .links a:hover {
+        background-color: #077b32;
+    }
+
+    .dropdown .cancel {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+        color: white;
+        cursor: pointer;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+}
+
+section {
+    width: 100%;
+    height: 90vh;
+    animation: fadeInSection 1.5s ease;
+}
+
+@keyframes fadeInSection {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.main-container .image {
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #077b32;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.main-container .content {
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #077b32;
+    animation: pulse 2s infinite;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+    animation: fadeIn 2s ease;
+}
+
+.content button {
+    width: 50%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #077b32;
+    color: white;
+    border: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.content button:hover {
+    transform: scale(1.1);
+    color: #077b32;
+    border: 2px solid #077b32;
+    background-color: transparent;
+    box-shadow: 0 0 40px #077b32;
+}
+
+/* Hamburger icon styling */
+.hamburg {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+    display: none;
+}
+
+@media (max-width: 884px) {
+    .hamburg {
+        display: block;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+}

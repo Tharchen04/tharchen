@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="education.css">
+    
+   
+    <title>Tharchens Profile</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Educational <span>Level</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="education.html">Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="family.html">Family</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="Passion.html">Passion</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="Passion.html">Passion</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Personal Education Level</h1>
+        <label for="education-level">Select your education level:</label>
+        <select id="education-level" onchange="displayEducationMessage()">
+            <option value="" disabled selected>Select your level</option>
+            <option value="primary">Primary</option>
+            <option value="lower">Lower School</option>
+            <option value="higher">Higher School</option>
+            <option value="college">College</option>
+        </select>
+    </div>
+    
+    <script>
+    function displayEducationMessage() {
+        const select = document.getElementById("education-level");
+        const value = select.value;
+        let redirectUrl;
+    
+        switch(value) {
+            case "primary":
+                redirectUrl = "primary.html"; // Change to your primary education page
+                break;
+            case "lower":
+                redirectUrl = "lower.html"; // Change to your lower school page
+                break;
+            case "higher":
+                redirectUrl = "higher.html"; // Change to your higher school page
+                break;
+            case "college":
+                redirectUrl = "college.html"; // Change to your college page
+                break;
+            default:
+                return; // Do nothing if no valid selection
+        }
+    
+        // Redirect to the selected page
+        window.location.href = redirectUrl;
+    }
+    </script>
+    
+           
+        </select>
+        <p id="education-message"></p>
+    </div>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script src="education.js"></script>
+</body>
+</html>

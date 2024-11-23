@@ -1,0 +1,242 @@
+/* Reset styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh; /* Change to min-height to allow scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    background-color: black;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    z-index: 100;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+ 
+}
+
+.logo span {
+    color: #077b32;
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+}
+
+.links {
+    display: flex;
+    list-style-type: none;
+}
+
+.link {
+    margin-left: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #077b32;
+}
+
+/* Hamburger icon (mobile view) */
+.hamburg {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Dropdown for mobile */
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear; 
+}
+
+.dropdown.active {
+    transform: translateY(0);
+}
+
+.dropdown .links {
+    display: block;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: #077b32;
+    
+}
+
+.dropdown .links a:last-child {
+    background-color: #00ff00;
+    color: white;
+}
+
+.cancel {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 884px) {
+    .hamburg {
+        display: block;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+
+    .links {
+        display: none;
+    }
+}
+
+/* Scroll Animation (AOS) */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+[data-aos="zoom-in"] {
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+[data-aos="fade-up"] {
+    animation: fadeUp 1.5s ease-in-out;
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* Container Animation */
+#passions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-in forwards; /* Fade-in effect */
+}
+
+/* Each Section Animation */
+.passion-section {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Slide up effect */
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.3s; /* Delay for the first section */
+}
+
+/* Staggered delay for each section */
+.passion-section:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.passion-section:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Other styles */
+.passion-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+h1, h2 {
+    margin-bottom: 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
+}
